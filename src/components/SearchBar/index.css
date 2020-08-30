@@ -1,0 +1,33 @@
+.searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+.search {
+    margin: 5px;
+    min-width: 220px;
+    max-width: 475px;
+    width: 40%;
+    height: 1.7rem;
+    font-size: 20px;
+    padding-left: 5px;
+    border-color: #434385;
+}
+
+.submitBtn {
+    border: black solid 1px;
+    border-radius: 5px;
+    padding: 5px 20px;
+    width: 100px;
+    background-color: #434385;
+    color: aliceblue;
+    font-weight: bold;
+    box-shadow: black 1px 1px;
+
+}
+
+.submitBtn:hover {
+    cursor: pointer;
+}

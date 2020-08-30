@@ -4,7 +4,6 @@ import "./index.css";
 
 const GarageList = ({ items, isLoading }) => {
   if (isLoading) return <h1>Loading...</h1>;
-
   return (
     <div className="garage-list">
       {items.map((item, index) => {

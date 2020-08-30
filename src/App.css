@@ -1,6 +1,11 @@
-html {
-  width: 100vw;
-  height: 100vh;
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
 }
 
 .App {
@@ -14,4 +19,5 @@ html {
   justify-content: center;
   align-items: center;
   width: 100%;
+  color: #434385;
 }

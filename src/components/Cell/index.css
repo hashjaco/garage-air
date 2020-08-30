@@ -1,8 +1,82 @@
-.grid-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1 1 auto;
-    width: 20%;
-    height: 300px;
+.grid-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  flex: 1 1 auto;
+  width: 20%;
+  height: auto;
+  padding: 10px;
+}
+
+.grid-cell > div {
+    border: #000 1px solid;
+    box-shadow: gray(67) 1px 1px;
+}
+
+.grid-cell img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+    border-bottom: gray 1px solid;
+}
+
+.cell-body {
+  width: 100%;
+  height: 50%;
+    padding: 20px 0;
+}
+
+.cell-body h2 {
+  margin-bottom: 5px;
+}
+
+.address {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.address p {
+  margin: 5px 0;
+}
+
+.cell-body button {
+    height: 30px;
+    min-width: 200px;
+    box-shadow: black 1px 1px;
+    background-color: #434385;
+}
+
+.cell-body button:hover {
+    transform: translate(1px, 1px);
+    box-shadow: black 0 0;
+    cursor: pointer;
+}
+
+.cell-body button a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+@media only screen and (max-width: 760px) {
+  .grid-cell {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 1050px) {
+  .grid-cell {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1050px) and (max-width: 1400px) {
+  .grid-cell {
+    width: 30%;
+  }
 }
