@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import SearchBar from "./components/SearchBar";
+import GarageList from "./components/GarageList";
 
-function App() {
+const App = () => {
+  const [query, setQuery] = useState("");
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  /* Retrieve input from user submission */
+  const getUserInput = (input) => {
+    fetchItems(input)
+      .then(() =>
+        console.log(`Sweet! You have just run a search on garages in ${input}`)
+      )
+      .catch((err) => console.error(err.message));
+    setQuery(input);
+  };
+
+  /**
+   * @function getItems
+   * @returns information about parking garages located in specified location
+   * */
+  const fetchItems = async (location) => {
+    setLoading(true);
+    await fetch(`http://localhost:8081/garages/${location}`)
+      .then((data) => data.json())
+      .then((result) => {
+        setItems(result["businesses"]);
+      })
+      .catch((err) => console.error(err.message));
+    setLoading(false);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/*title*/}
+      <div className="title">
+        <h1>Garage Search</h1>
+      </div>
+      {/*search bar*/}
+      <SearchBar sendBackInput={getUserInput} />
+      {/*garage list*/}
+      <GarageList items={items} isLoading={loading} />
+      {/*paginator*/}
     </div>
   );
-}
+};
 
 export default App;
