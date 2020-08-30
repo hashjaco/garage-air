@@ -21,7 +21,7 @@
     "eject": "react-scripts eject",
     "rest": "node src/api/server.js",
     "rest-dev": "nodemon src/api/server.js",
-    "parallel": "concurrently \"yarn rest\" \"yarn build\""
+    "parallel": "concurrently \"yarn rest\" \"yarn start\""
   },
   "eslintConfig": {
     "extends": "react-app"
