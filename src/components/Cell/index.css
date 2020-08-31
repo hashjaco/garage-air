@@ -12,6 +12,8 @@
 .grid-cell > div {
     border: #000 1px solid;
     box-shadow: gray(67) 1px 1px;
+    min-width: 365px;
+    min-height: 630px;
 }
 
 .grid-cell img {
@@ -40,6 +42,7 @@
 
 .address p {
   margin: 5px 0;
+    font-size: 1em;
 }
 
 .cell-body button {
@@ -47,6 +50,7 @@
     min-width: 200px;
     box-shadow: black 1px 1px;
     background-color: #434385;
+    align-self: flex-end;
 }
 
 .cell-body button:hover {
